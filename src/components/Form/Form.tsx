@@ -17,7 +17,7 @@ const Form = () => {
     {
       id: 1,
       type: 'text',
-      name: 'firstName',
+      name: 'firstName' as const,
       placeholder: 'Insira seu nome',
       pattern: '^[A-Za-z]{3,}',
       required: true,
@@ -74,7 +74,7 @@ const Form = () => {
     e.preventDefault()
     console.log(values)
     alert('Cadastro Efetuado')
-    clear()
+    // clear()
   }
 
   // Clear Inputs
@@ -95,7 +95,7 @@ const Form = () => {
         <Input
           key={input.id}
           {...input}
-          value={values[input.name]}
+          value={values[input.name as keyof typeof values]}
           onChange={handleOnChangeInput}
         />
       ))}

@@ -15,9 +15,10 @@ interface IInput {
 const Input = (props: IInput) => {
   const [focus, setFocus] = useState(false)
 
-  const handleFocusInput = (e: InputHTMLAttributes<HTMLInputElement>) => {
-    setFocus(true)
+  const handleFocusInput = () => {
+    setFocus(!focus)
   }
+
   return (
     <>
       <div className='input__container'>
@@ -30,8 +31,11 @@ const Input = (props: IInput) => {
           onChange={props.onChange}
           required={props.required}
           pattern={props.pattern}
+          data-focus={focus.toString()}
           onBlur={handleFocusInput}
-          focus={focus.toString()}
+          onFocus={() =>
+            props.name === 'confirmPassword' && setFocus(!focus)
+          }
         />
         <div className='bottom__border'></div>
         <span className='error__message'>{props.error_message}</span>
