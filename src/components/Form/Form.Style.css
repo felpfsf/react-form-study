@@ -1,11 +1,14 @@
 form {
-  max-width: 500px;
+  max-width: 448px;
   min-width: 300px;
   width: 100%;
   
+  margin: 4rem auto;
 
-  padding: 8px;
+  padding: 16px;
 
   border: 1px solid salmon;
   border-radius: 10px;
+
+  text-align:center;
 }
