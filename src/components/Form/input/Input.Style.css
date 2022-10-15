@@ -15,7 +15,12 @@
   font-size: 0.875rem;
 }
 
-.inpt__field:invalid[focus='true'] ~ .error__message {
+.inpt__field:invalid[data-focus='true'] {
+  border: 1px solid crimson;
+  border-radius: 0.625rem;
+}
+
+.inpt__field:invalid[data-focus='true'] ~ .error__message {
   display: block;
 }
 
