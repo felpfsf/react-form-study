@@ -1,14 +1,19 @@
 .input__container {
   width: 100%;
-  margin-block: 1.5rem;
+  margin-block: 50px;
+  position: relative;
 }
 
 .inpt__field {
   font-family: 'Roboto', sans-serif;
   width: 100%;
-  border: none;
-  background-color: transparent;
+
   padding-block: 0.375rem;
+  padding-inline: 0.25rem;
+
+  border: none;
+
+  background-color: transparent;
 }
 
 .inpt__field::placeholder {
@@ -17,7 +22,6 @@
 
 .inpt__field:invalid[data-focus='true'] {
   border: 1px solid crimson;
-  border-radius: 0.625rem;
 }
 
 .inpt__field:invalid[data-focus='true'] ~ .error__message {
@@ -26,12 +30,17 @@
 
 .bottom__border {
   margin-top: 0.125rem;
+
   border-bottom: 2px solid #c1c1c1;
 }
 
 .error__message {
+  position: absolute;
+
   font-size: 0.875rem;
   font-weight: 600;
+  text-align: center;
   color: crimson;
+
   display: none;
 }
