@@ -34,6 +34,7 @@ const FormStyled = () => {
       data.pastas,
       isChecked
     )
+    console.log(data)
   }
   return (
     <SForm onSubmit={handleSubmit}>
