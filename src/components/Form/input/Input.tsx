@@ -11,6 +11,8 @@ interface IInput {
   required: boolean
   error_message: string
 }
+// Outra maneira de fazer isso, as props são enviadas no componente 
+// interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = (props: IInput) => {
   const [focus, setFocus] = useState(false)
@@ -28,14 +30,14 @@ const Input = (props: IInput) => {
           name={props.name}
           placeholder={props.placeholder}
           value={props.value}
-          onChange={props.onChange}
           required={props.required}
           pattern={props.pattern}
+          onChange={props.onChange}
+          // Aqui todas as props enviadas são passadas sem a necessidade de declarar cada uma
+          // {...props}
           data-focus={focus.toString()}
           onBlur={handleFocusInput}
-          onFocus={() =>
-            props.name === 'confirmPassword' && setFocus(!focus)
-          }
+          onFocus={() => props.name === 'confirmPassword' && setFocus(!focus)}
         />
         <div className='bottom__border'></div>
         <span className='error__message'>{props.error_message}</span>
